@@ -2,7 +2,7 @@
 
 _name=pydantic-core
 pkgname=python-pydantic-core
-pkgver=2.2.0
+pkgver=2.3.0
 pkgrel=1
 pkgdesc="Core validation logic for pydantic written in rust "
 arch=(x86_64)
@@ -29,8 +29,8 @@ checkdepends=(
 )
 options=(!lto)
 source=($pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
-sha512sums=('b8deb54086579b8b7470e25c95047278101b57867474fa47e32fcaa879744e85238da45bccb06cf37563bfa758b582d5a57f5a6d401fabb81a15a20e8c24f7ac')
-b2sums=('1aad6b24faba50e1b9934e8ed281f8a8a229982e2bcd910106e02da9dd94611f24ddf90886438cb65d26f56e41e9b3c26bb851d2a8f71d2e796c8ef896b7b25a')
+sha512sums=('976e1ad2c13d1431c7fdac0aae559dd261f949afad6c3c5c97e19fac9d196abb030bc2713cd36105bb298a7c63b633a8bce5d237402d15a630626b2bc9b3d5df')
+b2sums=('48057f1b27567a3eb93f745d44fbb6075da2d388b943983c32c67ad195e4412ca95f06a74ccffed0653747c9a0b0bd637cb433c2f525fccc18f133c7a1b3bc72')
 
 prepare() {
   # we don't support version pinning
