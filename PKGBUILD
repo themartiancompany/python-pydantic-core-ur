@@ -2,6 +2,7 @@
 
 _name=pydantic-core
 pkgname=python-pydantic-core
+# WARNING: this package is pinned down to the patch-level version in python-pydantic and should only be updated in lock-step with it
 pkgver=2.3.0
 epoch=1
 pkgrel=1
