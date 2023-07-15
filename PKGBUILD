@@ -4,8 +4,8 @@ _name=pydantic-core
 pkgname=python-pydantic-core
 # WARNING: this package is pinned down to the patch-level version in python-pydantic and should only be updated in lock-step with it
 pkgver=2.3.0
+pkgrel=2
 epoch=1
-pkgrel=1
 pkgdesc="Core validation logic for pydantic written in rust "
 arch=(x86_64)
 url="https://github.com/pydantic/pydantic-core"
@@ -25,6 +25,7 @@ checkdepends=(
   python-dirty-equals
   python-hypothesis
   python-pytest
+  python-pytest-benchmark
   python-pytest-examples
   python-pytest-mock
   python-pytest-timeout
@@ -37,8 +38,6 @@ b2sums=('48057f1b27567a3eb93f745d44fbb6075da2d388b943983c32c67ad195e4412ca95f06a
 prepare() {
   # we don't support version pinning
   sed -e 's/,!=4.7.0//g' -i $_name-$pkgver/pyproject.toml
-  # remove pytest benchmark options as they are not recognized by pytest: https://github.com/pydantic/pydantic-core/issues/778
-  sed -e '/benchmark/d' -i $_name-$pkgver/pyproject.toml
 }
 
 build() {
@@ -49,7 +48,6 @@ build() {
 check() {
   local pytest_options=(
     -vv
-    --ignore tests/benchmarks  # don't run benchmark tests
     # recursion error https://github.com/pydantic/pydantic-core/issues/777
     --deselect tests/test_hypothesis.py::test_recursive
   )
