@@ -7,7 +7,10 @@ pkgver=2.14.6
 pkgrel=1
 epoch=1
 pkgdesc="Core validation logic for pydantic written in rust "
-arch=(x86_64)
+arch=(
+  x86_64
+  arm
+)
 url="https://github.com/pydantic/pydantic-core"
 license=(MIT)
 depends=(
