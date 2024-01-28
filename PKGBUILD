@@ -1,4 +1,7 @@
+# SPDX-License-Identifier: AGPL-3.0
+#
 # Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Pellegrino Prevete (tallero) <pellegrinoprevete@gmail.com>
 
 _name=pydantic-core
 pkgname=python-pydantic-core
@@ -67,3 +70,5 @@ package() {
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
   install -vDm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
 }
+
+# vim:set sw=2 sts=-1 et:
