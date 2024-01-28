@@ -5,6 +5,7 @@ pkgbase = python-pydantic-core
 	epoch = 1
 	url = https://github.com/pydantic/pydantic-core
 	arch = x86_64
+	arch = arm
 	license = MIT
 	checkdepends = python-dirty-equals
 	checkdepends = python-hypothesis
