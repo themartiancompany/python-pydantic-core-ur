@@ -41,7 +41,7 @@ pkgname="${_py}-${_pkg}"
 #          to the patch-level version in
 #          python-pydantic and should only
 #          be updated in lock-step with it
-pkgver=2.14.6
+pkgver=2.27.2
 pkgrel=1
 epoch=1
 _pkgdesc=(
@@ -90,10 +90,10 @@ source=(
   "${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz"
 )
 sha512sums=(
-  '08d11343ccbda5857bbd256598a7153dd1e57ce7ef1016436c5cf45adde0b7fb1a1e3cffcb0006982bbab5d25fc3f2f2d1161fbf3f979b4222e9573faf73c8d3'
+  '2720fe30c074b654bad2f200786962f3d92300de01b757b3a6a892cc3a2cec0693fd0070cee8d27a6c83baba68a29a6fd049cdf2d4fdd50bc07312ef4f3cf47c'
 )
 b2sums=(
-  'c9c9089c8888f0725c1b3cec301d6b03febb4c2ea8f501047c741301c6ce3c0a767fe458121104cc46e34ebad5fd38918d5fd238949dcaf74ecb41320fb29146'
+  '2b338b3e2d7dd52b8aaa072e06513ec1f5dd10e6699acd3b01cb0e6a7e20d2181a6be233dc51b3d6d4b50a2ea1c19ac66d66c62965fff4b51a94146dbf5eddcc'
 )
 
 prepare() {
