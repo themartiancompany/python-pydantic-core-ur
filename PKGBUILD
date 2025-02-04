@@ -23,6 +23,16 @@
 # Maintainer: Pellegrino Prevete (tallero) <pellegrinoprevete@gmail.com>
 # Maintainer: David Runge <dvzrv@archlinux.org>
 
+_os="$( \
+  uname \
+    -o)"
+if [[ "${_os}" == "Android" ]]; then
+  _libc="ndk-sysroot"
+  _libc_libs="libcompiler-rt"
+elif [[ "${_os}" == "GNU/Linux" ]]; then
+  _libc_libs="gcc-libs"
+  _libc="glibc"
+fi
 _py="python"
 _proj="pydantic"
 _pkg="${_proj}-core"
@@ -54,8 +64,8 @@ license=(
   'MIT'
 )
 depends=(
-  'gcc-libs'
-  'glibc'
+  "${_libc}"
+  "${_libc_libs}"
   "${_py}"
   "${_py}-typing-extensions"
 )
