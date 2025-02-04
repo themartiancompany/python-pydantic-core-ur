@@ -23,6 +23,7 @@
 # Maintainer: Pellegrino Prevete (tallero) <pellegrinoprevete@gmail.com>
 # Maintainer: David Runge <dvzrv@archlinux.org>
 
+_py="python"
 _proj="pydantic"
 _pkg="${_proj}-core"
 pkgname="${_py}-${_pkg}"
