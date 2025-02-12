@@ -20,7 +20,9 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # Maintainer: Truocolo <truocolo@aol.com>
-# Maintainer: Pellegrino Prevete (tallero) <pellegrinoprevete@gmail.com>
+# Maintainer: Truocolo <truocolo@0x6E5163fC4BFc1511Dbe06bB605cc14a3e462332b>
+# Maintainer: Pellegrino Prevete (dvorak) <pellegrinoprevete@gmail.com>
+# Maintainer: Pellegrino Prevete (dvorak) <dvorak@0x87003Bd6C074C713783df04f36517451fF34CBEf>
 # Maintainer: David Runge <dvzrv@archlinux.org>
 
 _os="$( \
@@ -34,6 +36,15 @@ elif [[ "${_os}" == "GNU/Linux" ]]; then
   _libc="glibc"
 fi
 _py="python"
+_pyver="$( \
+  "${_py}" \
+    -V | \
+    awk \
+      '{print $2}')"
+_pymajver="${_pyver%.*}"
+_pyminver="${_pymajver#*.}"
+_pynextver="${_pymajver%.*}.$(( \
+  ${_pyminver} + 1))"
 _proj="pydantic"
 _pkg="${_proj}-core"
 pkgname="${_py}-${_pkg}"
@@ -66,7 +77,8 @@ license=(
 depends=(
   "${_libc}"
   "${_libc_libs}"
-  "${_py}"
+  "${_py}>=${_pymajver}"
+  "${_py}<${_pynextver}"
   "${_py}-typing-extensions"
 )
 makedepends=(
